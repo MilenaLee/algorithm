@@ -10,7 +10,7 @@ int numcplx = 0;
 int findcomplex(int x, int y) {
 	if (x<0 || x >= mapsize || y<0 || y >= mapsize) return 0;
 
-	if (map[x][y] == 'x'){
+	if (map[x][y] == '1'){
 		map[x][y] = '0';
 		complex[numcplx]++;
 		findcomplex(x - 1, y);
@@ -27,16 +27,12 @@ int main()
 	scanf("%d", &mapsize);
 	for (i = 0; i<mapsize; i++) {
 		scanf("%s", map[i]);
-		for (j = 0; j<mapsize; j++) {
-			if (map[i][j] == '1') {
-				map[i][j] = 'x';
-			}
-		}
+
 	}
 
 	for (i = 0; i<mapsize; i++) {
 		for (j = 0; j<mapsize; j++) {
-			if (map[i][j] == 'x') {
+			if (map[i][j] == '1') {
 				numcplx++;
 				findcomplex(i, j);
 			}
