@@ -37,7 +37,7 @@ int main() {
 					if(res[j][i] < res[z][i - 1] + invest[j - z][i]){
 
 					res[j][i] =res[z][i - 1] + invest[j - z][i];
-					incInvest[j][i] = j - z;
+					incInvest[j][i] = j - z;//i번째 기업에 투자한 돈 저장
 				}
 			}
 		}
