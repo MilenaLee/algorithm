@@ -98,3 +98,49 @@ int main() {
 
 	return 0;
 }
+/*
+#include <stdio.h>
+ 
+int max (int a, int b) { return a > b ? a : b; }
+ 
+int main (void)
+{
+    int N, a[7], x, i, m = 0;
+ 
+    scanf ("%d", &N);
+ 
+    while (N--)
+    {
+        for (i = 1; i < 7; i++) a[i] = 0;
+ 
+        for (i = 0; i < 4; i++)
+        {
+            scanf ("%d", &x);
+            a[x]++;
+        }
+ 
+        x = 0;
+ 
+        for (i = 6; i > 0; i--)
+        {
+            switch (a[i])
+            {
+                case 4: m = max (m, i*5000 + 50000); break;
+                case 3: m = max (m, i*1000 + 10000); break;
+                case 2:
+                    if (x > 0)
+                        m = max (m, i*500 + x*500 + 2000);
+                    else
+                        m = max (m, i*100 + 1000);
+                    x = i;
+                    break;
+                case 1: m = max (m, i*100); break;
+            }
+        }
+    }
+ 
+    printf ("%d\n", m);
+}
+
+https://www.acmicpc.net/source/2707485
+*/
